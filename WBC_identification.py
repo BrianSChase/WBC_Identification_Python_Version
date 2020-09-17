@@ -1,20 +1,7 @@
 import cv2 
 import numpy as np
 
-####################################################################################
-#Create connected components
 
-#WHen using opencv functions it appears that when you pass a variable thats set equal to another it treats it as a pointer
-#and then modifies the original object you set it equal to. So I have the original image, and then set blue_only to it and then
-#performed operations on blue_only and it changed image. Maybe when you set a variable equal to a variable that was set to the value
-#of an opencv object it treats that new variable as a pointer to the original opencv object
-
-#NOTE ON RGB IN OPENCV PYTHON.
-# SINCE NUMPY I THINK DOES ARRAY OPERATIONS BACKWARD, ALOT OF OPERATIONS IN OPENCV ARE BGR, NOT RGB
-# HOWEVER, IN THE ACTUAL ARRAY 0 IS RED AND 2 IS BLUE FOR THE INDEX
-
-
-###################################################################################
 
 
 
@@ -77,39 +64,3 @@ centroids = output[3]
 
 print(labels)
     
-
-#########################################################THIS SECTION OF THE PROGRAM IS ANOTHER ATTEMPT AT SEGMENTING, THE ABOVE MIGHT BE BETTER AS ITS EASIER
-
-
-#hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
-
-    
-#lower_red = np.array([30,150,50])
-
-#THIS IS MY STARTING BLUE, HAD TO BE ADJUSTED.    
-#upper_red = np.array([255,255,180])
-#lower_blue = np.array([110,50,50])  
-
-#THESE FIND ALL THE BLUE AREAS, THE FIRST VARIABLE IN UPPER BLUE, THE LOWER IT GOES, THE LESS GOOD AT FINDING BLUE IT IS
-#lower_blue = np.array([120,60,60])  
-#upper_blue = np.array([150, 255, 255])
-    
-#mask = cv2.inRange(hsv, lower_blue, upper_blue)
-    
-#res = cv2.bitwise_and(image,image, mask= mask)
-
-    
-#cv2.imshow('Image',image)
-#cv2.waitKey(0)
-#cv2.destroyAllWindows() 
-#cv2.imshow('mask',mask)
-#cv2.waitKey(0)
-#cv2.destroyAllWindows() 
-#cv2.imshow('res',res)
-    
-#cv2.waitKey(0)
-#cv2.destroyAllWindows()
-
-
-
-###########################################################################################################################
